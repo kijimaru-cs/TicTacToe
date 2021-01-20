@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+}
+.header {
+  height: 5%;
+}
+.InputVariable {
+  font-size: 15px;
+  height: 3%;
+}
+.content {
+  height: auto;
+  width: auto;
+}
+table,
+th {
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 30px;
+}

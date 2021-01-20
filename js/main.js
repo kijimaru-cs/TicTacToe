@@ -1,5 +1,20 @@
 let count = 0;
-var board = [][];
+let boardGame = new Array();
+//create array
+function createBoard() {
+  var number = document.getElementById("nTable").value;
+  var n = parseInt(number);
+  for (let i = 0; i < number; i++) {
+    boardGame[i] = new Array(n);
+  }
+  //initial array
+  for (let i = 0; i < number; i++) {
+    for (let j = 0; j < number; j++) {
+      boardGame[i][j] = 0;
+    }
+  }
+}
+
 function ClickTable(id) {
   count = count + 1;
   if (count % 2 == 1) {
@@ -8,11 +23,14 @@ function ClickTable(id) {
     document.getElementById(id).innerHTML = "O";
   }
 }
+
 function createTable() {
   //clear screen
   if (document.getElementById("boardGame") != null) {
     document.getElementById("boardGame").remove();
   }
+  // initial borad
+  createBoard();
   //create table
   var body = document.getElementsByClassName("tableScreen")[0];
   var number = document.getElementById("nTable").value;
@@ -32,7 +50,5 @@ function createTable() {
     tblBody.appendChild(row);
   }
   tbl.appendChild(tblBody);
-    body.appendChild(tbl);
-    
-
+  body.appendChild(tbl);
 }
