@@ -2,6 +2,7 @@ let count = 0;
 var boardGame = new Array();
 //create array
 function createBoard() {
+  document.getElementById("inputVariable").style.display = "none";
   count = 0;
   document.getElementById("content2").style.display = "block";
   document.getElementById("turnScreen").innerHTML = "Turn: Player1";
@@ -19,24 +20,31 @@ function createBoard() {
 }
 
 function ClickTable(id) {
-  count = count + 1;
   let str = id.split(",");
   let i = parseInt(str[0]);
   let j = parseInt(str[1]);
-  if (count % 2 == 1) {
-    document.getElementById(id).innerHTML = "X";
-    document.getElementById("turnScreen").innerHTML = "Turn: Player2";
-    boardGame[i][j] = 1;
+  if (
+    document.getElementById(id).innerHTML == "X" ||
+    document.getElementById(id).innerHTML == "O"
+  ) {
   } else {
-    document.getElementById(id).innerHTML = "O";
-    document.getElementById("turnScreen").innerHTML = "Turn: Player1";
-    boardGame[i][j] = -1;
+    count = count + 1;
+    if (count % 2 == 1) {
+      document.getElementById(id).innerHTML = "X";
+      document.getElementById("turnScreen").innerHTML = "Turn: Player2";
+      boardGame[i][j] = 1;
+    } else {
+      document.getElementById(id).innerHTML = "O";
+      document.getElementById("turnScreen").innerHTML = "Turn: Player1";
+      boardGame[i][j] = -1;
+    }
+    checkWinGame();
   }
-  checkWinGame();
 }
 
 function checkWinGame() {
   var number = document.getElementById("nTable").value;
+  let endgame = false;
   let checkDiagonal1 = 0;
   let checkDiagonal2 = 0;
   for (let i = 0; i < number; i++) {
@@ -61,15 +69,31 @@ function checkWinGame() {
         checkDiagonal2 == -number ||
         checkDiagonal2 == number
       ) {
-        alert("Win");
-        createTable();
+        document.getElementById("endGameScreen").style.display = "block";
+        if (count % 2 == 1) {
+          document.getElementById("h1EndGameScreen").innerHTML = "Player 1 Win";
+        } else {
+          document.getElementById("h1EndGameScreen").innerHTML = "Player 2 Win";
+        }
+        document.getElementById("inputVariable").style.display = "block";
+        document.getElementById("boardGame").style.opacity = "0.3";
+        endgame = true;
+        break;
       }
     }
+  }
+  if (count == number * number && endgame == false) {
+    document.getElementById("endGameScreen").style.display = "block";
+    document.getElementById("inputVariable").style.display = "block";
+    document.getElementById("h1EndGameScreen").innerHTML = "DRAW";
+    document.getElementById("boardGame").style.opacity = "0.3";
+    endgame = true;
   }
 }
 
 function createTable() {
   //clear screen
+  document.getElementById("endGameScreen").style.display = "none";
   if (document.getElementById("boardGame") != null) {
     document.getElementById("boardGame").remove();
   }

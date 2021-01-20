@@ -2,9 +2,19 @@ body {
   margin: 0;
 }
 .header {
+  background-color: #23689b;
   height: 5%;
+  color: white;
+}
+.btnStart {
+  margin: 10px 10px 10px 10px;
+  font-size: 30px;
+  background-color: #487e95;
+  color: white;
+  cursor: pointer;
 }
 .InputVariable {
+  margin-left: 5%;
   font-size: 30px;
   height: 5%;
 }
@@ -34,4 +44,17 @@ td {
 }
 td:hover {
   background-color: aquamarine;
+}
+.endGameScreen {
+  display: none;
+  position: absolute;
+  font-size: 60px;
+  left: 20%;
+  top: 10%;
+  width: 60%;
+  height: 60%;
+}
+.btnEndGameScreen {
+  font-size: 30px;
+  cursor: pointer;
 }
