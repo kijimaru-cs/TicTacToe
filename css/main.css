@@ -5,21 +5,33 @@ body {
   height: 5%;
 }
 .InputVariable {
-  font-size: 15px;
-  height: 3%;
+  font-size: 30px;
+  height: 5%;
 }
 .content {
+  flex-direction: column;
   height: auto;
   width: auto;
+}
+.content2 {
+  height: auto;
+  width: 25%;
+  display: none;
 }
 table,
 th {
   border-collapse: collapse;
 }
+
 td {
+  /* border: 1px solid black; */
   border: 1px solid black;
+  transition: 0.5s;
   width: 100px;
   height: 100px;
   text-align: center;
   font-size: 30px;
+}
+td:hover {
+  background-color: aquamarine;
 }
