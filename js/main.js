@@ -272,7 +272,7 @@ function bot() {
           if (boardGame[i][j] == botRole) {
             countDiagonal2 = countDiagonal2 + 1;
           }
-          if (boardGame[i][j] == botRole) {
+          if (boardGame[i][j] == -botRole) {
             countDiagonal2User = countDiagonal2User + 1;
           }
           if (boardGame[i][j] == 0) {
@@ -281,33 +281,32 @@ function bot() {
           }
         }
       }
-      if (countHorizontal == 2 && freeHorizontal == 1) {
+      if (countHorizontal == number - 1 && freeHorizontal == 1) {
         bestWay.push(tempHorizontal);
       }
-      if (countVertical == 2 && freeVertical == 1) {
+      if (countVertical == number - 1 && freeVertical == 1) {
         bestWay.push(tempVertical);
       }
-      if (countHorizontalUser == 2 && freeHorizontal == 1) {
+      if (countHorizontalUser == number - 1 && freeHorizontal == 1) {
         bestWay.push(tempHorizontal);
       }
-      if (countVerticalUser == 2 && freeVertical == 1) {
+      if (countVerticalUser == number - 1 && freeVertical == 1) {
         bestWay.push(tempVertical);
       }
     }
-    if (countDiagonal1 == 2 && freeDiagonal1 == 1) {
+    if (countDiagonal1 == number - 1 && freeDiagonal1 == 1) {
       bestWay.push(tempDiagonal1);
     }
-    if (countDiagonal2 == 2 && freeDiagonal2 == 1) {
+    if (countDiagonal2 == number - 1 && freeDiagonal2 == 1) {
       bestWay.push(tempDiagonal2);
     }
-    if (countDiagonal1User == 2 && freeDiagonal1 == 1) {
+    if (countDiagonal1User == number - 1 && freeDiagonal1 == 1) {
       bestWay.push(tempDiagonal1);
     }
-    if (countDiagonal2User == 2 && freeDiagonal2 == 1) {
+    if (countDiagonal2User == number - 1 && freeDiagonal2 == 1) {
       bestWay.push(tempDiagonal2);
     }
     // not have best way => random way
-    console.log(bestWay);
     if (bestWay.length == 0) {
       ClickTableBot(freeSpace[parseInt(Math.random() * freeSpace.length)]);
     } else {
