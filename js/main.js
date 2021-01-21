@@ -182,9 +182,11 @@ function createTable() {
 function chooseRole() {
   if (document.getElementById("gameType").value == "Bot") {
     document.getElementById("startType").style.display = "inline";
+    document.getElementById("startType2").style.display = "inline";
   }
   if (document.getElementById("gameType").value == "Player") {
     document.getElementById("startType").style.display = "none";
+    document.getElementById("startType2").style.display = "none";
   }
 }
 

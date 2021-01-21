@@ -6,6 +6,18 @@ body {
   height: 5%;
   color: white;
 }
+.nTable {
+  font-size: 20px;
+  width: 8%;
+  margin: 0px 10px 0px 10px;
+}
+.nTable:focus {
+  background-color: #f7f7e8;
+}
+.gameType {
+  font-size: 20px;
+  margin: 0px 10px 0px 10px;
+}
 .btnStart {
   margin: 10px 10px 10px 10px;
   font-size: 30px;
@@ -22,6 +34,10 @@ body {
   display: none;
   font-size: 30px;
 }
+.startType2 {
+  display: none;
+  font-size: 30px;
+}
 .content {
   flex-direction: column;
   height: auto;
@@ -35,11 +51,12 @@ body {
 table,
 th {
   border-collapse: collapse;
+  border: 15px solid black;
 }
 
 td {
   /* border: 1px solid black; */
-  border: 1px solid black;
+  border: 5px dotted black;
   transition: 0.5s;
   width: 100px;
   height: 100px;
@@ -51,6 +68,7 @@ td:hover {
 }
 .endGameScreen {
   display: none;
+  transition: 2s;
   position: absolute;
   font-size: 60px;
   left: 20%;
