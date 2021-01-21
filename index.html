@@ -21,9 +21,14 @@
                 <option value="9">9*9</option>
                 <option value="10">10*10</option>
             </select>
-            <label for="gameType">เลือกชนิดการเล่น</label><select name="selectGameType" id="gameType">
+            <label for="gameType">เลือกชนิดการเล่น</label><select name="selectGameType" id="gameType" onclick="chooseRole()">
                 <option value="Player">Player</option>
                 <option value="Bot">Bot</option>
+            </select>
+            <label for="startType" class="startType">เลือกตำแหน่ง</label>
+            <select name="startGameType" class="startType" id="startType">
+                <option value="X">X</option>
+                <option value="O">O</option>
             </select>
             <button class="btnStart" type="button" onclick="createTable()">เริ่มเล่น</button>
         </div>

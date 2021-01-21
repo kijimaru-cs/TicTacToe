@@ -18,6 +18,10 @@ body {
   font-size: 30px;
   height: 5%;
 }
+.startType {
+  display: none;
+  font-size: 30px;
+}
 .content {
   flex-direction: column;
   height: auto;
